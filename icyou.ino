@@ -43,7 +43,7 @@ const int framedelay = 750;  //delay between frames to allow servo movement
 
 //set the members for the hm array to the home positions for your robot
 //they can be found by using the icbob_home_calibration sketch
-const int hm[4] = {120, 120, 85, 80}; //array to hold home position for each servo RH,RA,LH,LA
+const int hm[4] = {95, 95, 85, 90}; //array to hold home position for each servo RH,RA,LH,LA
 
 //forward array data
 const int fwdmvct = 6;  //Make this number equal to the number of lines in the array
