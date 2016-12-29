@@ -30,6 +30,10 @@ VarSpeedServo RA;
 VarSpeedServo LH;
 VarSpeedServo LA;
 
+// Set the home positions for your robot's legs
+// RH IN-->OUT, LH=OUT-->IN, RA=IN-->OUT, LA=OUT-->IN
+const int hm[4] = {115, 119, 93, 85}; //array to hold home position for each servo RH,RA,LH,LA
+
 #define PIN_BUZZER 3 // Pin you have speaker/piezo connected to
 #define PIN_LED 13
 
@@ -40,10 +44,6 @@ NewPing sonar(PIN_PING_TRIG, PIN_PING_ECHO, 200); //create a NewPing object. (tr
 
 const int svsp = 10;  //speed setting for VarSpeedServo SlowMove
 const int framedelay = 750;  //delay between frames to allow servo movement
-
-//set the members for the hm array to the home positions for your robot
-//they can be found by using the icbob_home_calibration sketch
-const int hm[4] = {115, 119, 93, 85}; //array to hold home position for each servo RH,RA,LH,LA
 
 //forward array data
 const int fwdmvct = 6;  //Make this number equal to the number of lines in the array
