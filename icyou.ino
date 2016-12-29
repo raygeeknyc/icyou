@@ -43,7 +43,7 @@ const int framedelay = 750;  //delay between frames to allow servo movement
 
 //set the members for the hm array to the home positions for your robot
 //they can be found by using the icbob_home_calibration sketch
-const int hm[4] = {95, 95, 85, 90}; //array to hold home position for each servo RH,RA,LH,LA
+const int hm[4] = {115, 119, 93, 85}; //array to hold home position for each servo RH,RA,LH,LA
 
 //forward array data
 const int fwdmvct = 6;  //Make this number equal to the number of lines in the array
@@ -83,25 +83,25 @@ void playTune() {
   }
 }
 
-void setup()  //setup runs one time
+void setup()
 {
   pinMode(PIN_BUZZER, OUTPUT);
   pinMode(PIN_LED, OUTPUT);
+  digitalWrite(PIN_LED, HIGH);
   RH.attach(PIN_RIGHT_HIP);   //attach the 4 servo objects to the corresponding pins
   RA.attach(PIN_RIGHT_FOOT);  //Robot's right and left when viewed from behind
   LH.attach(PIN_LEFT_HIP);  //Not with the robot facing you!
   LA.attach(PIN_LEFT_FOOT);
 
   //home servos for 2 seconds to stabilize
-  digitalWrite(PIN_LED, HIGH);
+  TimerFreeTone(PIN_BUZZER, 500, 500);
   RH.slowmove (hm[0] , svsp);
-  RA.slowmove (hm[1] , svsp);
   LH.slowmove (hm[2] , svsp);
+  RA.slowmove (hm[1] , svsp);
   LA.slowmove (hm[3] , svsp);
-  delay(2000);
+  delay(3000);
   digitalWrite(PIN_LED, LOW);
   lastState = AVOID;
-  playTune();
 }
 
 void loop()  //loop repeats forever
