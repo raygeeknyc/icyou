@@ -32,7 +32,7 @@ VarSpeedServo LA;
 
 // Set the home positions for your robot's legs
 // RH IN-->OUT, LH=OUT-->IN, RA=IN-->OUT, LA=OUT-->IN
-const int hm[4] = {115, 119, 97, 84}; //array to hold home position for each servo RH,RA,LH,LA
+const int hm[4] = {115, 119, 90, 84}; //array to hold home position for each servo RH,RA,LH,LA
 
 #define PIN_BUZZER 3 // Pin you have speaker/piezo connected to
 #define PIN_LED 13
